@@ -75,7 +75,7 @@
 						flex-direction: column;
 					"
 				>
-					<h3 style="margin: 0 0 0.5em">QQQ</h3>
+					<h3 id="stock-symbol" style="margin: 0 0 0.5em"></h3>
 					<h2 id="stock-ticker" style="margin: unset"></h2>
 				</div>
 			</div>
@@ -153,6 +153,9 @@
 						changeColor = 'lightgrey';
 					}
 					const formattedData = `<span style="color: ${changeColor};">${qqqPrice}</span><small style="font-size: 16px"><br><span style="color: ${changeColor};">${arrow} ${qqqChangePercent}%</span></small>`;
+
+					// set the symbol text to the selected symbol
+					document.getElementById('stock-symbol').innerText = symbol;
 
 					// set the 'stock-ticker' element to the formatted stock data
 					document.getElementById('stock-ticker').innerHTML = formattedData;
